@@ -17,7 +17,7 @@ interface EmployeeDAO {
     suspend fun delete(employeeEntity: EmployeeEntity)
 
     @Query("SELECT * FROM `employee-table`")
-    fun fetchAllEmployees():kotlinx.coroutines.flow.Flow<List<EmployeeEntity>>
+    fun fetchAllEmployees():kotlinx.coroutines.flow.Flow<EmployeeEntity>
 
     @Query("SELECT * FROM `employee-table` WHERE id=:id")
     fun fetchEmployeeById(id:Int):kotlinx.coroutines.flow.Flow<EmployeeEntity>
